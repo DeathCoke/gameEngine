@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+  </head>
+  <body>
+    <script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var posX = w/2;//position of X
+    var posY = h/2;//position of Y
+      function setup() {
+        createCanvas(w,h);//creates the canvas
+      }
+      function draw() {
+        background(255);//background color is white
+        fill(color('#a7d694'));//box is green
+        noStroke();//No borders on the box
+        rect(posX, posY, 100, 100);//x,y,w,h
+        if((keyIsDown(87)) && (posY > 0)) { //When W is pressed it moves up and will not move past the top of the screen
+          posY -=10;
+        }
+        if((keyIsDown(65)) && (posX > 0)) {//When A is pressed it moves left and will not move past the left of the screen
+          posX -=10;
+        }
+        if((keyIsDown(83)) && (posY < h - 100)) {//When S is pressed it moves down and will not move past the left of the screen
+          posY -= -10;
+        }
+        if((keyIsDown(68)) && (posX < w - 100)) {//When D is pressed it moves right and will not move past the left of the screen
+          posX -= -10;
+        }
+      }
+    </script>
+  </body>
+</html>
